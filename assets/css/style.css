@@ -1,0 +1,16 @@
+/*reset css*/
+
+html,
+body,
+div {
+    margin: 0;
+    height: 0;
+}
+
+
+/*custom css*/
+
+.container {
+    font-size: 20px;
+    color: red;
+}
