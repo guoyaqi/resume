@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:3000/assets/css/style.css"/>
+    <style>
+        .border-line {
+            height: 4px;
+            background-color: #3c8bca;
+            margin-left: -6px;
+        }
+        .left-bar {
+            width: 24px;
+            height: 825px;
+            position: absolute;
+            background-color: #005c9f;
+        }
+        .main {
+            margin-left: 24px;
+            border-left: 6px solid #004072;
+        }
+        .main .main-title {
+            position: relative;
+        }
+        .main .main-title .name {
+            color: #3c8bca;
+            font-size: 50px;
+            padding: 24px 0 0 11px;
+        }
+        .main .main-title .position {
+            color: #555655;
+            font-size: 19px;
+            padding-left: 11px;
+        }
+        .main .main-profile {
+            position: relative;
+            min-height: 220px;
+        }
+        .main .main-profile .profile-title {
+            display: inline-block;
+            background-color: #3c8bca;
+            color: #fff;
+            margin-top: 22px;
+            height: 26px;
+            width: 163px;
+            text-align: center;
+            line-height: 31px;
+            margin-left: -6px;
+
+        }
+        .main .main-profile .profile-detail {
+            padding: 0 10px;
+            width: 458px;
+            font-size: 12px;
+        }
+        .main .main-profile .personal-info {
+            position: absolute;
+            top: 22px;
+            right: 0;
+        }
+        .main .main-profile .personal-info .info-title {
+            display: inline-block;
+            width: 202px;
+            height: 30px;
+            box-sizing: border-box;
+            padding-top: 7px;
+            padding-left: 16px;
+            color: #fff;
+            background-color: #494342;
+        }
+        .main-profile .personal-info .info-detail {
+            background-color: #e6e1df;
+            padding-bottom: 18px;
+        }
+        .main-profile .personal-info .info-detail .detail-left {
+            display: inline-block;
+        }
+        .main-profile .personal-info .info-detail .detail-left img {
+            width: 18px;
+        }
+        .main-profile .personal-info .info-detail .detail-right {
+            display: inline-block;
+            font-size: 13px;
+            margin-left: 6px;
+            vertical-align: top;
+        }
+        .main-profile .personal-info .info-detail .detail-item {
+            padding: 18px 14px 0;
+        }
+        .vertical-middle {
+            vertical-align: middle!important;
+        }
+        .main-education,
+        .main-work {
+            margin-bottom: 20px;
+        }
+        .main-education .education-title,
+        .main-work .work-title,
+        .main-technical .technical-title {
+            display: inline-block;
+            background-color: #3c8bca;
+            color: #fff;
+            margin-top: 1px;
+            height: 26px;
+            width: 163px;
+            text-align: center;
+            line-height: 31px;
+            margin-left: -6px;
+        }
+        .main-education .education-list .education-item,
+        .main-work .work-list .work-item {
+            margin: 10px 10px 0;
+            font-size: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #979190;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .clearfix:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .technical-item img {
+            height: 14px;
+        }
+        .technical-detail {
+            padding: 10px;
+            font-size: 12px;
+        }
+        .technical-detail .part-left,
+        .technical-detail .part-right {
+            width: 50%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .technical-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--<img style="position: absolute;width: 620px;z-index: -1;opacity: 0.6" src="assets/img/resume.jpg"/>-->
+<div class="container">
+    <div class="left-bar"></div>
+    <div class="main">
+        <div class="main-title">
+            <div class="name">
+                {{name}}
+            </div>
+            <div class="position">
+                {{position}}
+            </div>
+        </div>
+        <div class="main-profile">
+            <div class="profile-title">
+                {{profileTitle}}
+            </div>
+            <div class="border-line"></div>
+            <div class="profile-detail">
+                <p>1.2015年最后一天，陆军、火箭军、战略支援部队成立。2016年1月11日，军委部门调整后，新设立15个职能部门。2016年2月1日，七大军区改为五大战区。至此，史上“最牛军改”呈现出“军委管总、战区主战、军种主建”的新格局。</p>
+                <p>2.从十八届三中全会《决定》中的深化国防与军队改革开始，在之后的全军政治工作会议和中央军委改革工作会议等多个场合，习近平反复谈到军队改革的重要性和紧迫性。</p>
+                <p>3.“政事儿”(微信ID：gcxxjgzh)注意到，在习近平的多次有关军改的讲话中，能打仗、打胜仗、讲政治、从严治军、提效能等成为高频词汇。</p>
+            </div>
+            <div class="personal-info">
+                <div class="info-title">
+                    联系信息
+                </div>
+                <div class="info-detail">
+                    <div class="detail-item">
+                        <div class="detail-left">
+                            <img src="http://localhost:3000/assets/img/location.png"/>
+                        </div>
+                        <div class="detail-right">
+                            凤城九路
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-left">
+                            <img src="http://localhost:3000/assets/img/telphone.png"/>
+                        </div>
+                        <div class="detail-right">
+                            15902999528
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-left">
+                            <img src="http://localhost:3000/assets/img/email.png"/>
+                        </div>
+                        <div class="detail-right vertical-middle">
+                            164216915@qq.com
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-left">
+                            <img src="http://localhost:3000/assets/img/web.png"/>
+                        </div>
+                        <div class="detail-right">
+                            www.roomis.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-education">
+            <div class="education-title">
+                教育经历
+            </div>
+            <div class="border-line"></div>
+            <div class="education-list">
+                <div class="education-item clearfix">
+                    <div class="item-left left">
+                        <div class="item-title">北京大学软件与微电子学院</div>
+                        <div class="item-detail">网络与通信技术系，主修互联网软件开发专业，获工程硕士学位</div>
+                    </div>
+                    <div class="item-right right">
+                        <span class="time-start">2010</span>-
+                        <span class="time-end">2014</span>
+                    </div>
+                </div>
+                <div class="education-item clearfix">
+                    <div class="item-left left">
+                        <div class="item-title">南航金城学院</div>
+                        <div class="item-detail">机电工程系，主修机械工程及自动化专业，获工程学士学位</div>
+                    </div>
+                    <div class="item-right right">
+                        <span class="time-start">2005</span>-
+                        <span class="time-end">2009</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-work">
+            <div class="work-title">
+                工作经历
+            </div>
+            <div class="border-line"></div>
+            <div class="work-list">
+                <div class="work-item clearfix">
+                    <div class="item-left left">
+                        <div class="item-title">西安智园软件有限公司</div>
+                        <div class="item-detail">web前端开发</div>
+                    </div>
+                    <div class="item-right right">
+                        <span class="time-start">2014</span>-
+                        <span class="time-end">至今</span>
+                    </div>
+                </div>
+                <div class="work-item clearfix">
+                    <div class="item-left left">
+                        <div class="item-title">西安航空发动机集团有限公司</div>
+                        <div class="item-detail">助理机械工程师</div>
+                    </div>
+                    <div class="item-right right">
+                        <span class="time-start">2009</span>-
+                        <span class="time-end">2010</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-technical">
+            <div class="technical-title">个人技能</div>
+            <div class="border-line"></div>
+            <div class="technical-detail clearfix">
+                <div class="part-left">
+                    <div class="technical-item">
+                        <span>Photoshop</span>
+                        <img class="right" src="http://localhost:3000/assets/img/left-10.png" alt=""/>
+                    </div>
+                    <div class="technical-item">
+                        <span>Html</span>
+                        <img class="right" src="http://localhost:3000/assets/img/left-8.png" alt=""/>
+                    </div>
+                    <div class="technical-item">
+                        <span>CSS</span>
+                        <img class="right" src="http://localhost:3000/assets/img/left-7.png" alt=""/>
+                    </div>
+                    <div class="technical-item">
+                        <span>PHP</span>
+                        <img class="right" src="http://localhost:3000/assets/img/left-4.png" alt=""/>
+                    </div>
+                    <div class="technical-item">
+                        <span>Javascript</span>
+                        <img class="right" src="http://localhost:3000/assets/img/left-6.png" alt=""/>
+                    </div>
+                </div>
+                <div class="part-right">
+                    <div class="technical-item clearfix">
+                        <img class="left" src="http://localhost:3000/assets/img/right-10.png" alt=""/>
+                        <span class="right">Ilustrator</span>
+                    </div>
+                    <div class="technical-item clearfix">
+                        <img class="left" src="http://localhost:3000/assets/img/right-8.png" alt=""/>
+                        <span class="right">Core</span>
+                    </div>
+                    <div class="technical-item clearfix">
+                        <img class="left" src="http://localhost:3000/assets/img/right-7.png" alt=""/>
+                        <span class="right">Flash</span>
+                    </div>
+                    <div class="technical-item clearfix">
+                        <img class="left" src="http://localhost:3000/assets/img/right-8.png" alt=""/>
+                        <span class="right">Drawing</span>
+                    </div>
+                    <div class="technical-item clearfix">
+                        <img class="left" src="http://localhost:3000/assets/img/right-9.png" alt=""/>
+                        <span class="right">Time Managerment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div>1234</div>-->
+<!--<h1>{{ name }}</h1>-->
+
+<!--<h1>{{ password}}</h1>-->
+</body>
+</html>

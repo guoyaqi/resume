@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://localhost:3000/assets/css/style.css"/>
+    <script src="http://localhost:3000/angular/angular.min.js"></script>
+    <script src="http://localhost:3000/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://localhost:3000/angular-indexedDB/angular-indexed-db.js"></script>
+</head>
+<body ng-app="myModuleName">
+<div class="demo" ng-controller="myControllerName">
+    <div>
+        <input type="text" ng-model="name" placeholder="名字"/>
+        <input type="text" ng-model="age" placeholder="年龄"/>
+        <input type="text" ng-model="email" placeholder="邮箱"/>
+        <button ng-click="save()">保存</button>
+    </div>
+</div>
+</body>
+<script>
+    angular.module('myModuleName', ['indexedDB'])
+        .config(function ($indexedDBProvider) {
+            $indexedDBProvider
+                .connection('myIndexedDB')
+                .upgradeDatabase(1, function (event, db, tx) {
+                    console.log(1)
+                    var objStore = db.createObjectStore('people', {autoIncrement: true});
+                    objStore.createIndex('name_idx', 'name', {unique: false});
+                    objStore.createIndex('age_idx', 'age', {unique: false});
+                    objStore.createIndex('email_idx', 'email', {unique: false});
+                    objStore.createIndex('description_idx', 'description', {unique: false});
+                })
+                .upgradeDatabase(2, function (event, db, tx) {
+                    db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});
+                });
+        })
+        .controller('myControllerName', function($scope, $indexedDB) {
+
+
+            $scope.objects = [];
+
+            $indexedDB.openStore('people', function(store){
+//                store.insert({"name": "John Doe", "age": 57}).then(function(e){
+//                    console.log(e)
+//                });
+
+                console.log(store.getAll())
+                store.getAll().then(function(people) {
+                    console.log(22222)
+                    // Update scope
+                    $scope.objects = people;
+                    console.log(people);
+                });
+            });
+
+            $scope.save = function(){
+                $indexedDB.openStore('people', function(store){
+                    console.log($scope.name)
+                    console.log($scope.age)
+                    store.insert({"name": $scope.name, "age": $scope.age, "email": $scope.email}).then(function(e){
+                        console.log(e)
+                    });
+                });
+            };
+        });
+</script>
+</html>

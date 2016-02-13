@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://localhost:3000/assets/css/style.css"/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <script src="http://localhost:3000/angular/angular.min.js"></script>
+    <script src="http://localhost:3000/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://localhost:3000/assets/js/config.js"></script>
+    <script src="http://localhost:3000/assets/js/service.js"></script>
+    <script>
+        myModuleName.controller('myControllerName', function ($scope, api, $http) {
+                $scope.isShow = false;
+                api.getResumeJson(function (data) {
+                    $scope.names = data.data.name;
+                })
+                $scope.submit = function (form) {
+                    $http.post('/resume', {
+                        name: form.name,
+                        position: form.position,
+                        profileTitle: form.profileTitle
+                    }).then(function(res){
+                        if(res.data === "yes"){
+                            $scope.isShow = true;
+                        }
+                    })
+                };
+            });
+    </script>
+</head>
+<body ng-app="myModuleName">
+<div class="demo" ng-controller="myControllerName">
+    <form class="pure-form pure-form-aligned" ng-submit="submit(form)">
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-2" ng-model="form.name" placeholder="姓名">
+            <input type="text" class="pure-input-1-2" ng-model="form.position" placeholder="职位">
+        </fieldset>
+
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-2" ng-model="form.profileTitle" placeholder="个人简介">
+            <textarea class="pure-input-1-2" ng-model="form.profileDetail" placeholder="个人简介详情"></textarea>
+        </fieldset>
+
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-2" ng-model="form.education" placeholder="教育经历">
+        </fieldset>
+
+        <button type="submit" class="pure-button pure-input-1-2 pure-button-primary" id="submit" ng-show="!isShow">保存</button>
+        <a href="/resume-t1" class="pure-button pure-input-1-2 pure-button-primary" ng-show="isShow">生成pdf</a>
+    </form>
+</div>
+</body>
+
+</html>

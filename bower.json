@@ -1,0 +1,23 @@
+{
+  "name": "build-pdf",
+  "description": "build pdf with html",
+  "main": "",
+  "authors": [
+    "Guo Yaqi <1664216915@qq.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "angular-ui-router": "~0.2.18",
+    "angular-indexedDB": "angular-indexed-db#~1.1.3"
+  }
+}
