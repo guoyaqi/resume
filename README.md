@@ -17,13 +17,13 @@
 ## 有想法后就开始行动了：
 - [ ] 被pass的想法：使用localstorage和indexedDB后会用生成的pdf中的内容部分没有与之对应的信息。估计是html生成pdf是同步的，而html中的localstorage和indexedDB是异步的关系吧？
 
-## 为了简单实现最初的想法，并没有采用数据库，而是将数据保存在了json文件。
+### 为了简单实现最初的想法，并没有采用数据库，而是将数据保存在了json文件。
 - [x] 1. 用户输入表单信息，并保存
 - [x] 2. 发送post请求生成json文件
 - [x] 3. 在resume-t1的模版demo.html中读取json文件的数据，并以pdf的形式展示
 
 
-## 首先确保有node环境，clone代码库后然后执行以下命令：
+### 首先确保有node环境，clone代码库后然后执行以下命令：
 > 1.npm install
 
 说明：
