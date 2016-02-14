@@ -24,7 +24,7 @@
 
 
 ## 首先确保有node环境，clone代码库后然后执行以下命令：
-> 1. npm install
+> 1.npm install
 
 说明：
 
@@ -42,7 +42,7 @@ jsonfile是将json文件读取成功后直接转为json；
 
 swig和ejs类似，也是模版引擎，它可以支持client也可以server端，写法有点像angular，所以选择swig；
 
->2. bower install
+> 2.bower install
 
 angular 想做成单页应用，所以选择angular；
 
@@ -50,10 +50,10 @@ angular-ui-router 希望是多view，先引入进来，还没用到。。。；
 
 angular-indexedDB 想用基于浏览器的indexedDB来实现数据的存储读取等，可实际过程会中断转化pdf的过程，最终放弃使用
 
-> 3. npm install nodemon -g
+> 3.npm install nodemon -g
 
 可以监听某些文件，当发生变化可自动重启服务器，也可以手动输入“rs”来重启
 
-> 4. nodemon server.js
+> 4.nodemon server.js
 
 浏览器输入：localhost:3000 即可
